@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/setupFragments">
+
+    <action android:id="@+id/action_global_trackingFragment"
+        app:destination="@id/trackingFragments"
+        app:launchSingleTop="true"/>
+    <fragment
+        android:id="@+id/statisticsFragments"
+        android:name="com.masykur.runningapp.ui.fragments.StatisticsFragments"
+        android:label="StatisticsFragments" />
+    <fragment
+        android:id="@+id/setupFragments"
+        android:name="com.masykur.runningapp.ui.fragments.SetupFragments"
+        android:label="SetupFragments" >
+        <action
+            android:id="@+id/action_setupFragments_to_runFragments"
+            app:destination="@id/runFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/runFragments"
+        android:name="com.masykur.runningapp.ui.fragments.RunFragments"
+        android:label="RunFragments" >
+        <action
+            android:id="@+id/action_runFragments_to_trackingFragments"
+            app:destination="@id/trackingFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingFragments"
+        android:name="com.masykur.runningapp.ui.fragments.TrackingFragments"
+        android:label="TrackingFragments" >
+        <action
+            android:id="@+id/action_trackingFragments_to_runFragments"
+            app:destination="@id/runFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragments"
+        android:name="com.masykur.runningapp.ui.fragments.SettingsFragments"
+        android:label="SettingsFragments" />
+</navigation>
